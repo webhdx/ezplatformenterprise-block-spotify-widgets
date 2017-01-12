@@ -1,0 +1,22 @@
+parameters:
+  ez_systems.landing_page.block.spotify_follow_button.class: EzSystems\LandingPageBlockSpotify\Block\FollowButtonBlock
+  ez_systems.landing_page.block.spotify_play_button.class: EzSystems\LandingPageBlockSpotify\Block\PlayButtonBlock
+  ez_systems.landing_page.block.spotify.api.class: EzSystems\LandingPageBlockSpotify\MusicServiceApi\SpotifyApi
+
+services:
+    ez_systems.landing_page.block.spotify_follow_button:
+        class: "%ez_systems.landing_page.block.spotify_follow_button.class%"
+        arguments:
+            - "@ez_systems.landing_page.block.spotify.music_service_api"
+        tags:
+            - { name: landing_page_field_type.block_type, alias: spotify_follow_button }
+
+    ez_systems.landing_page.block.spotify_play_button:
+        class: "%ez_systems.landing_page.block.spotify_play_button.class%"
+        arguments:
+            - "@ez_systems.landing_page.block.spotify.music_service_api"
+        tags:
+            - { name: landing_page_field_type.block_type, alias: spotify_play_button }
+
+    ez_systems.landing_page.block.spotify.music_service_api:
+        class: "%ez_systems.landing_page.block.spotify.api.class%"

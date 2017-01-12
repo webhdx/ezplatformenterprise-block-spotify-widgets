@@ -1,0 +1,29 @@
+<!--
+  ~  @copyright Copyright (C) eZ Systems AS. All rights reserved.
+  ~  @license For full copyright and license information view LICENSE file distributed with this source code.
+  -->
+
+<phpunit bootstrap="./tests/bootstrap.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         syntaxCheck="true">
+    <php>
+        <ini name="error_reporting" value="-1" />
+    </php>
+    <testsuites>
+        <testsuite name="EzSystems\LandingPageBlockSpotifyBundle">
+            <directory>tests/bundle</directory>
+        </testsuite>
+        <testsuite name="EzSystems\LandingPageBlockSpotify">
+            <directory>tests/lib</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+            <directory>bundle</directory>
+            <directory>lib</directory>
+        </whitelist>
+    </filter>
+</phpunit>

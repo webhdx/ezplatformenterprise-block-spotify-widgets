@@ -1,0 +1,11 @@
+blocks:
+    spotify_follow_button:
+        views:
+            basic:
+                template: EzSystemsLandingPageBlockSpotifyBundle:blocks:spotify_follow_button.html.twig
+                name: Spotify Follow Button template
+    spotify_play_button:
+        views:
+            basic:
+                template: EzSystemsLandingPageBlockSpotifyBundle:blocks:spotify_play_button.html.twig
+                name: Spotify Play Button template
