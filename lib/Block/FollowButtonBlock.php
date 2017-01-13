@@ -42,7 +42,7 @@ class FollowButtonBlock extends AbstractBlock
                 $spotifyUri = 'spotify:user:' . $attributes[self::BLOCK_ATTRIBUTE_NAME_OR_ID];
                 break;
             case 'artist':
-                $artist = $this->musicServiceApi->getArtistByName($attributes['name_or_id']);
+                $artist = $this->musicServiceApi->getArtistByName($attributes[self::BLOCK_ATTRIBUTE_NAME_OR_ID]);
 
                 if (null !== $artist) {
                     $spotifyUri = 'spotify:artist:' . $artist->getId();
